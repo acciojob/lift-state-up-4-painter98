@@ -1,7 +1,6 @@
 
 import React,{useState} from "react";
 import './../styles/App.css';
-import Cart from './Cart.js';
 
 let itemArray = [];
 const App = () => {
@@ -36,16 +35,19 @@ const App = () => {
     <div className="parent">
         {/* Do not remove the main div */}
         <h1>Parent Component</h1>
-        <form onSubmit={(e)=>items(e)}>
+        <form>
             Item Name<input type="text" id="itemName" onChange={(e)=>setName(e.target.value)}/>
             Item Price<input type="number" className="itemPrice" onChange={(e)=>setPrice(e.target.value)}/>
-            <button>Add Items</button>
+            <button onClick={items}>Add Items</button>
         </form>
         <h2>Child Component</h2>
         <ul className="child">
             {
                 cartItems.map((item,idx)=>{
-                    return <Cart idx={idx} item={item} ondelete={deleting}/>
+                    return <li>
+                    {item.name}-{item.price}
+                    <button onClick={()=>deleting(idx)}>Remove</button>
+                </li>
             })
             }
             </ul>

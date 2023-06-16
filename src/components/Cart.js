@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 function Cart({idx,item,ondelete}){
 //console.log('inside cart');
