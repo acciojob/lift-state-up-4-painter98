@@ -40,7 +40,7 @@ const App = () => {
             {
                 cartItems.map((item,idx)=>{
                     return <li>
-                    {item.name}-{item.price}
+                    {item.name} - ${item.price}
                     <button onClick={()=>deleting(idx)}>Remove</button>
                 </li>
             })
