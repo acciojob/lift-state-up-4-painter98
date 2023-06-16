@@ -20,14 +20,9 @@ const App = () => {
   }
 
   function deleting(idx){
-    /*let newItem = cartItems.filter((item,id) => {
-      console.log(item);
 
-      return id!==idx
-    })*/
     cartItems.splice(idx,1)
     setCartItems([...cartItems]);
-    //console.log(idx,newItem.length,newItem,cartItems.length);
     console.log('delete items',cartItems);
 }
 
@@ -37,7 +32,7 @@ const App = () => {
         <h1>Parent Component</h1>
         <form>
             Item Name<input type="text" id="itemName" onChange={(e)=>setName(e.target.value)}/>
-            Item Price<input type="number" className="itemPrice" onChange={(e)=>setPrice(e.target.value)}/>
+            Item Price<input type="number" id="itemPrice" onChange={(e)=>setPrice(e.target.value)}/>
             <button onClick={items}>Add Items</button>
         </form>
         <h2>Child Component</h2>
