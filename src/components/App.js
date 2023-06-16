@@ -37,7 +37,7 @@ const App = () => {
         {/* Do not remove the main div */}
         <h1>Parent Component</h1>
         <form onSubmit={(e)=>items(e)}>
-            Item Name<input type="text" className="itemName" onChange={(e)=>setName(e.target.value)}/>
+            Item Name<input type="text" id="itemName" onChange={(e)=>setName(e.target.value)}/>
             Item Price<input type="number" className="itemPrice" onChange={(e)=>setPrice(e.target.value)}/>
             <button>Add Items</button>
         </form>
