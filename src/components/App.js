@@ -35,9 +35,11 @@ const App = () => {
             Item Price<input type="number" id="itemPrice" onChange={(e)=>setPrice(e.target.value)}/>
             <button onClick={items}>Add Items</button>
         </form>
+        <div className="child">
         <h2>Child Component</h2>
-        <ul className="child">
+        <ul>
             {
+              cartItems &&
                 cartItems.map((item,idx)=>{
                     return <li>
                     {item.name} - ${item.price}
@@ -45,7 +47,8 @@ const App = () => {
                 </li>
             })
             }
-            </ul>
+          </ul>
+        </div>
     </div>
   )
 }
